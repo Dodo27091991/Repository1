@@ -1,5 +1,7 @@
 node {
     def app
+
+    stages{
     stage('Clone repository'){
         checkout scm
     }
@@ -19,5 +21,6 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
+    }
     }
 }
