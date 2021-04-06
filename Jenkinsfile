@@ -1,23 +1,21 @@
-node {
-    def app
-    stage('Clone repository'){
-        checkout scm
-    }
-    
-    stage('Build image'){
-        app=docker.Build("dodo27091991/repository1")
-    }
-
-    stage ('Test image'){
-        app.inside{
-            sh 'echo "test passed"'
+pipeline{
+    agent any
+    stages{
+        stage("Clone"){
+            checkout scm
         }
-    }
 
-    stage ('Push image'){
-        docker.withRegistry('https://registry.hub.docker.com','docker-credential'){
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+        stage("Build"){
+            echo "Building image"
         }
+
+        stage("Test"){
+            echo "Testing Image"
+        }
+
+        stage("Deploy"){
+            echo "Deploying image"
+        }
+
     }
 }
