@@ -1,21 +1,18 @@
-pipeline{
-    agent any
-    stages{
-        steps("Clone"){
-            checkout scm
-        }
+node{
+    def app
+    stage("Clone"){
+        checkout scm
+    }
 
-        stage("Build"){
-            echo "Building image"
-        }
+    stage("Build"){
+        echo "Build Images"
+    }
 
-        stage("Test"){
-            echo "Testing Image"
-        }
+    stage("Test"){
+        echo "Test Images"
+    }
 
-        stage("Deploy"){
-            echo "Deploying image"
-        }
-
+    stage("Deploy"){
+        echo "Deploy Images"
     }
 }
