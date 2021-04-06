@@ -11,7 +11,7 @@ pipeline {
             steps{
                 echo "I'm in bulding stage"
                 script{
-                    docker.build("dodo1","dodo27091991/dodo1")
+                    def app=docker.build("dodo1","dodo27091991/dodo1")
                 }
 
             }
