@@ -5,7 +5,7 @@ node{
     }
 
     stage("Build"){
-        docker { image 'node:14-alpine' }
+        docker.build("dodo/dodo1")
     }
 
     stage("Test"){
