@@ -5,7 +5,7 @@ node{
     }
 
     stage("Build"){
-        app = docker.Build("Dodo27091991/Repository1")
+        docker { image 'node:14-alpine' }
     }
 
     stage("Test"){
