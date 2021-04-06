@@ -5,7 +5,7 @@ node{
     }
 
     stage("Build"){
-        docker.build("dodo27091991/dodo1")
+        app=docker.build("dodo27091991/dodo1")
     }
 
     stage("Test"){
