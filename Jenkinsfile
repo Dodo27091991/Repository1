@@ -7,7 +7,7 @@ pipeline {
     }
 
     stage('Build image'){
-        app=docker.build("dodo27091991/repository1")
+        app=docker.Build("dodo27091991/repository1")
     }
 
     stage ('Test image'){
