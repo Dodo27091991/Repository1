@@ -1,11 +1,9 @@
-pipeline {
-    agent any
-
-    stages{
+node {
+    def app
     stage('Clone repository'){
         checkout scm
     }
-
+    
     stage('Build image'){
         app=docker.Build("dodo27091991/repository1")
     }
@@ -21,6 +19,5 @@ pipeline {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
-    }
     }
 }
