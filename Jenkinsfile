@@ -1,10 +1,11 @@
 node{
     def abc
-    stage("Clone"){
+    stage('Clone'){
         checkout scm
     }
 
     stage("build"){
+        echo "Building the image"
         abc=docker.build("dodo27091991")
     }
 
