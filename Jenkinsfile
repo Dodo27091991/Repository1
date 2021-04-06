@@ -11,7 +11,7 @@ pipeline {
             steps{
                 echo "I'm in bulding stage"
                 script{
-                    def app=docker.build("dodo1:${env.BUILD_ID}")
+                    def app=docker.build("dodo27091991")
                 }
 
             }
