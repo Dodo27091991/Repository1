@@ -6,7 +6,7 @@ pipeline {
                 checkout scm
             }
         }
-        agent { dockerfile = true}
+        
         stage("Build"){
             steps{
                 echo "I'm in bulding stage"
