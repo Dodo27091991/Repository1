@@ -1,32 +1,18 @@
-pipeline {
-    agent any
-    stages{
-        stage("Clone"){
-            steps{
-                checkout scm
-            }
-        }
-        
-        stage("Build"){
-            steps{
-                echo "I'm in bulding stage"
-                script{
-                    def app=docker.build("dodo27091991")
-                }
+node{
+    def abc
+    stage("Clone"){
+        checkout scm
+    }
 
-            }
-        }
-        
-        stage("Test"){
-            steps{
-                echo "Test the image"
-            }
-        }
+    stage("build"){
+        abc=docker.build("dodo27091991")
+    }
 
-        stage("Deploy"){
-            steps{
-                echo "Deploying the image"
-            }
-        }
+    stage("Test"){
+        echo "This is a test"
+    }
+
+    stage("Deploy"){
+        echo "Deployed"
     }
 }
