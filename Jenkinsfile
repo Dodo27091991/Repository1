@@ -5,7 +5,7 @@ node{
     }
 
     stage("Build"){
-        echo "Build Images"
+        app = docker.build("Dodo27091991/Repository1")
     }
 
     stage("Test"){
