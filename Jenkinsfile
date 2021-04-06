@@ -10,8 +10,8 @@ pipeline {
         stage("Build"){
             steps{
                 echo "I'm in bulding stage"
-                docker.build("dodo27091991\dodo1")
-                
+                docker.build("dodo27091991/dodo1")
+
             }
         }
         
